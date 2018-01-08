@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2018-01-06
+  duration: 1
+  kcal: 1
+
+two:
+  name: MyString
+  date: 2018-01-06
+  duration: 1
+  kcal: 1
