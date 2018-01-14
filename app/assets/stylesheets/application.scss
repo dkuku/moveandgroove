@@ -33,8 +33,11 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  font-family: 'Roboto', sans-serif;
 }
-
+h1 {
+  font-family: 'Mitr', sans-serif;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -155,4 +158,10 @@ body {
     width: 42rem;
   }
 }
- 
+ .jumbotron-bg{
+    background-image: image-url('front.jpg');
+    background-size: cover;
+}
+.jumbotron{
+    background: #00999d
+}

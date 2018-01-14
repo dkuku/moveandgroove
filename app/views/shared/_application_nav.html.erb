@@ -1,8 +1,8 @@
 
-<header class="masthead clearfix">
-  <div class="inner">
-    <h3 class="masthead-brand">Move & Groove</h3>
-    <nav class="nav nav-masthead">
+<header class="masthead container">
+  <div class="navbar" >
+    <%= link_to "Move & Groove", root_path, class: "nav-link navbar-brand" %>
+    <nav class="nav justify-content-right nav-masthead">
       <%= link_to "Home", root_path, class: "nav-link" %>
       <%= link_to "Activities", activities_path, class: "nav-link" %>
       <%= link_to "About", about_me_path, class: "nav-link" %>

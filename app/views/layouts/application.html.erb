@@ -6,13 +6,13 @@
 
       <title>Gruby</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/css?family=Mitr:400,600|Roboto" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="site-wrapper">
+    <div class="site-wrapper jumbotron-bg">
       <div class="site-wrapper-inner">
        <%= render "/shared/application_nav" %>
        <p class="notice"><%= notice %></p>
