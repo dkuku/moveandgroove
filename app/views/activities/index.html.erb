@@ -19,7 +19,7 @@
       <tr>
         <th scope="row"><%= idx + 1 %></th>
         <td><%= activity.date %></td>
-        <td><%= activity.name %></td>
+        <td><%= image_tag @activity_list.find(activity.activity_list_id).thumb_image unless @activity_list.find(activity.activity_list_id).thumb_image.nil?  %><%= @activity_list.find(activity.activity_list_id).name %></td>
         <td><%= activity.duration %> min</td>
         <td><%= activity.kcal %> kcal</td>
         <td>

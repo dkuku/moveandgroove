@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @activity_list.name %>
+</p>
+
+<p>
+  <strong>Theme:</strong>
+  <%= @activity_list.theme %>
+</p>
+
+<p>
+  <strong>Main image:</strong>
+  <%= @activity_list.main_image %>
+</p>
+
+<p>
+  <strong>Thumb image:</strong>
+  <%= @activity_list.thumb_image %>
+</p>
+
+<%= link_to 'Edit', edit_activity_list_path(@activity_list) %> |
+<%= link_to 'Back', activity_lists_path %>

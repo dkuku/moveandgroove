@@ -5,14 +5,17 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
+    @activity_list = ActivityList.all
   end
 
   # GET /activities/1
   # GET /activities/1.json
   def show
+    @activity_lists = ActivityList.all 
+    @activity_list = ActivityList.all
   end
 
-  # GET /activities/new
+  # GET /activities/nnd(ew
   def new
     @activity = Activity.new
   end

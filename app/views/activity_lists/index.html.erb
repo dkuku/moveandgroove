@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Activity Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Theme</th>
+      <th>Main image</th>
+      <th>Thumb image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @activity_lists.each do |activity_list| %>
+      <tr>
+        <td><%= activity_list.name %></td>
+        <td><%= activity_list.theme %></td>
+        <td><%= activity_list.main_image %></td>
+        <td><%= activity_list.thumb_image %></td>
+        <td><%= link_to 'Show', activity_list %></td>
+        <td><%= link_to 'Edit', edit_activity_list_path(activity_list) %></td>
+        <td><%= link_to 'Destroy', activity_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Activity List', new_activity_list_path %>

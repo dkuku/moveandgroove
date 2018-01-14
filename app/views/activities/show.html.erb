@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+    <%= image_tag @activity_list.find(@activity.activity_list_id).main_image unless @activity_list.find(
+        @activity.activity_list_id).main_image.nil?  %>
+</p>
+
+<p>
   <strong>Name:</strong>
-  <%= @activity.name %>
+  <%= @activity_list.find(@activity.activity_list_id).name %>
 </p>
 
 <p>
