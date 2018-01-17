@@ -1,18 +1,36 @@
+<nav class="navbar navbar-expand-lg fixed-top bg-dark text-warning" id="mainNav">
+      <%= link_to "Move & Groove", root_path, class: "nav-link navbar-brand" %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">+</span>
+      </button>
 
-<header class="masthead container">
-  <div class="navbar" >
-    <%= link_to "Move & Groove", root_path, class: "nav-link navbar-brand" %>
-    <nav class="nav justify-content-right nav-masthead">
-      <%= link_to "Home", root_path, class: "nav-link" %>
-      <%= link_to "Activities", activities_path, class: "nav-link" %>
-      <%= link_to "About", about_me_path, class: "nav-link" %>
-      <%= link_to "Contact", contact_path, class: "nav-link" %>
-      <% if current_user %>
-          <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
-      <% else %>
-        <%= link_to "Register", new_user_registration_path, class: "nav-link"  %>
-        <%= link_to "Login", new_user_session_path, class: "nav-link"  %>
-      <% end %>
-    </nav>
-  </div>
-</header>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to "Activities", activities_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "About", about_me_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Contact", contact_path, class: "nav-link" %>
+            </li>
+          </div>
+          </ul>
+          <ul class="nav navbar-nav">
+            <% if current_user %>
+                <li class="nav-item">
+              <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
+
+                </li>
+            <% else %>
+                <li class="nav-item">
+              <%= link_to "Register", new_user_registration_path, class: "nav-link"  %>
+                </li>
+                <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link"  %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>

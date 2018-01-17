@@ -32,6 +32,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.4'
 gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'jquery-rails'
+gem "bootstrap_form",
+      git: "https://github.com/bootstrap-ruby/rails-bootstrap-forms.git",
+      branch: "master"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

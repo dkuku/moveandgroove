@@ -1,6 +1,11 @@
- @import "bootstrap";
+@import "bootstrap";
+
 /*
- * Globals
+ *= require rails_bootstrap_forms
+ */
+
+/*
+ e Globals
  */
 
 /* Links */
@@ -158,6 +163,11 @@ h1 {
     width: 42rem;
   }
 }
+
+/*
+ * Custom Styles
+ */
+
  .jumbotron-bg{
     background-image: image-url('front.jpg');
     background-size: cover;
@@ -165,3 +175,20 @@ h1 {
 .jumbotron{
     background: #00999d
 }
+.button{
+    background-color: #FF9800;
+    border: 2px solid #FF9800;
+    font-size: 16px;
+    border-radius: 40px;
+    display: inline-block;
+    line-height: 1.6;
+    box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 1px 4px rgba(0,0,0,.2);
+}
+.card-block {
+    color: black;
+
+}
+.field {
+    @extend .form-group;
+}
+

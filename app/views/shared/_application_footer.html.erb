@@ -1,9 +1,29 @@
-
-<footer class="mastfoot">
-  <div class="inner">
-    <%= link_to "Home", root_path, class: "" %>
-    <%= link_to "About", about_me_path, class: "" %>
-    <%= link_to "Contact", contact_path, class: "" %>
-    <p>Copyright 2017 Daniel Kukula</p>
-  </div>
+<!-- Footer -->
+<footer class="pt-4">
+    <div  class="container">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <h3>Links</h3>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <%= link_to "Home", root_path, class: "" %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "About", about_me_path, class: "" %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "Contact", contact_path, class: "" %>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 mb-3">
+                <h3>Created by</h3>
+                <div class="text-warning">
+                    Daniel Kukula<br>
+                   © All Rights reserved <br>
+                   2017-2018
+                </div>
+            </div>    
+        </div>
+    </div>
 </footer>

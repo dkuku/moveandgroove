@@ -1,21 +1,18 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
-
+  before_action :get_activity_list
   # GET /activities
   # GET /activities.json
   def index
     @activities = Activity.all
-    @activity_list = ActivityList.all
   end
 
   # GET /activities/1
   # GET /activities/1.json
   def show
-    @activity_lists = ActivityList.all 
-    @activity_list = ActivityList.all
   end
 
-  # GET /activities/nnd(ew
+  # GET /activities/new
   def new
     @activity = Activity.new
   end
@@ -34,6 +31,7 @@ class ActivitiesController < ApplicationController
         format.html { redirect_to @activity, notice: 'Activity was successfully created.' }
         format.json { render :show, status: :created, location: @activity }
       else
+        byebug
         format.html { render :new }
         format.json { render json: @activity.errors, status: :unprocessable_entity }
       end
@@ -70,8 +68,12 @@ class ActivitiesController < ApplicationController
       @activity = Activity.find(params[:id])
     end
 
+    def get_activity_list
+      @activity_list = ActivityList.all
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:name, :date, :duration, :kcal, :user_id)
+      params.require(:activity).permit(:activity_list_id, :date, :duration, :kcal, :user_id)
     end
 end

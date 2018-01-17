@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<div>
 <h1>Activities</h1>
+<%= link_to 'New Activity', new_activity_path, class: "btn btn-primary", type: "button" %>
+</div>
 
 <table class="table">
   <thead>
@@ -36,4 +38,3 @@
 
 <br>
 
-<%= link_to 'New Activity', new_activity_path, class: "btn btn-primary", type: "button" %>

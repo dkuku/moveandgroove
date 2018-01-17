@@ -7,20 +7,17 @@
       <title>Gruby</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Mitr:400,600|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="site-wrapper jumbotron-bg">
-      <div class="site-wrapper-inner">
-       <%= render "/shared/application_nav" %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <%= render "/shared/application_nav" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-       <%= yield %>
-       <%= render "/shared/application_footer" %>
-      </div>
-    </div>
+    <%= yield %>
+    <%= render "/shared/application_footer" %>
   </body>
 </html>
