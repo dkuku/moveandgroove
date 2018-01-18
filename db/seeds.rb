@@ -11,11 +11,21 @@ user =  User.new(
   email: "daniel@wp.pl",
     name: "Daniel",
     password: "123456",
-    password_confirmation: "123456"
+    password_confirmation: "123456",
+    admin: true
   )
 user.save!
 
-puts "1 users created"
+user =  User.new(
+  email: "dan@wp.pl",
+    name: "Dan",
+    password: "123456",
+    password_confirmation: "123456",
+    admin: false
+  )
+user.save!
+
+puts "2 users created"
 
 
 
