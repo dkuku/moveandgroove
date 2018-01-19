@@ -27,7 +27,7 @@ class ActivityListsController < ApplicationController
     @activity_list = ActivityList.new(activity_list_params)
 
     respond_to do |format|
-      if @activity_list.save
+      if @activity_list.save & current_user.admin?
         format.html { redirect_to @activity_list, notice: 'Activity list was successfully created.' }
         format.json { render :show, status: :created, location: @activity_list }
       else
@@ -41,7 +41,7 @@ class ActivityListsController < ApplicationController
   # PATCH/PUT /activity_lists/1.json
   def update
     respond_to do |format|
-      if @activity_list.update(activity_list_params)
+      if @activity_list.update(activity_list_params) & current_user.admin?
         format.html { redirect_to @activity_list, notice: 'Activity list was successfully updated.' }
         format.json { render :show, status: :ok, location: @activity_list }
       else
