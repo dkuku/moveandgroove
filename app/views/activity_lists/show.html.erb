@@ -1,24 +1,30 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="row">
+    <div class="col-md">
+<div class="card bg-dark border-primary mx-auto mb-3" style="width: 18rem;">
+  <div class="card-header">
   <strong>Name:</strong>
   <%= @activity_list.name %>
-</p>
+  </div>
+      
+  <ul class="list-group list-group-flush list-group-item-dark">
+      <li class="list-group-item list-group-item-dark">
+        <strong>Theme:</strong>
+        <%= @activity_list.theme %>
+        <%= image_tag @activity_list.thumb_image %>
+      </li>
+      <li class="list-group-item list-group-item-dark">
+        <%= link_to 'Edit', edit_activity_list_path(@activity_list) %> |
+        <%= link_to 'Back', activity_lists_path %>
+      </li>
+  </ul>
+</div>
+       
+   </div> 
+    <div class="col-md">
+      <div class="card bg-dark mx-auto">
+        <%= image_tag @activity_list.main_image, class: "mx-auto" %>
+      </div> 
+   </div> 
+</div>
 
-<p>
-  <strong>Theme:</strong>
-  <%= @activity_list.theme %>
-</p>
-
-<p>
-  <strong>Main image:</strong>
-  <%= @activity_list.main_image %>
-</p>
-
-<p>
-  <strong>Thumb image:</strong>
-  <%= @activity_list.thumb_image %>
-</p>
-
-<%= link_to 'Edit', edit_activity_list_path(@activity_list) %> |
-<%= link_to 'Back', activity_lists_path %>
