@@ -1,13 +1,13 @@
-    <%= bootstrap_form_for(activity) do |form| %>
-      <% if activity.errors.any? %>
+<%= bootstrap_form_for(activity) do |form| %>
+    <% if activity.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
-    
-          <ul>
-          <% activity.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
+            <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+            <ul>
+                <% activity.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
         </div>
     <% end %>
     <%= form.select(:activity_list_id, options_from_collection_for_select(@activity_list, :id, :name), { :class => "form-control" }) %>
@@ -22,6 +22,6 @@
         <%= form.submit %>
     </div>
 <% end %>
-        
+
 </div> 
 

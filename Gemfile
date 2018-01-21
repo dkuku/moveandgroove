@@ -30,11 +30,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.4'
-gem 'bootstrap', '~> 4.0.0.beta3'
+# bootstrap and bootstrap forms
+gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem "bootstrap_form",
       git: "https://github.com/bootstrap-ruby/rails-bootstrap-forms.git",
       branch: "master"
+# Contact form
+gem 'contact_us', '~> 1.0.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
