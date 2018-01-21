@@ -9,41 +9,118 @@
 
 user =  User.new(
   email: "daniel@wp.pl",
-    name: "Daniel",
-    password: "123456",
-    password_confirmation: "123456",
-    admin: true
-  )
+  name: "Daniel",
+  password: "123456",
+  password_confirmation: "123456",
+  admin: true
+)
 user.save!
 
 user =  User.new(
   email: "dan@wp.pl",
-    name: "Dan",
-    password: "123456",
-    password_confirmation: "123456",
-    admin: false
-  )
+  name: "Dan",
+  password: "123456",
+  password_confirmation: "123456",
+  admin: false
+)
 user.save!
 
 puts "2 users created"
 
 
 
-10.times do |activity_list|
-  ActivityList.create!(
+
+ActivityList.create!(
   name: "running",
   theme: "default",
-  main_image: "http://via.placeholder.com/400x400",
-  thumb_image: "http://via.placeholder.com/50x50"
-  )
-end
+  main_image: "running.png",
+  thumb_image: "t-running.png"
+)
+ActivityList.create!(
+  name: "bike",
+  theme: "default",
+  main_image: "bike.png",
+  thumb_image: "t-bike.png"
+)
+ActivityList.create!(
+  name: "chest",
+  theme: "default",
+  main_image: "chest.png",
+  thumb_image: "t-chest.png"
+)
+ActivityList.create!(
+  name: "cross-trainer",
+  theme: "default",
+  main_image: "cross-trainer.png",
+  thumb_image: "t-cross-trainer.png"
+)
+ActivityList.create!(
+  name: "indoor-bike",
+  theme: "default",
+  main_image: "indoor-bike.png",
+  thumb_image: "t-indoor-bike.png"
+)
+ActivityList.create!(
+  name: "legs",
+  theme: "default",
+  main_image: "legs.png",
+  thumb_image: "t-legs.png"
+)
+ActivityList.create!(
+  name: "rowing",
+  theme: "default",
+  main_image: "rowing.png",
+  thumb_image: "t-rowing.png"
+)
+ActivityList.create!(
+  name: "arms",
+  theme: "default",
+  main_image: "arms.png",
+  thumb_image: "t-arms.png"
+)
+ActivityList.create!(
+  name: "weight",
+  theme: "default",
+  main_image: "weight.png",
+  thumb_image: "t-weight.png"
+)
+
 
 puts "10 activity_list created"
 
 
-10.times do |activity|
+
+2.times do |activity|
+  Activity.create!(
+    activity_list_id: "2",
+    date: "1/1/2018".to_date , 
+    duration: "15", 
+    kcal: "200",
+    user_id: "1"
+  )
+end
+3.times do |activity|
   Activity.create!(
     activity_list_id: "1",
+    date: "1/2/2018".to_date , 
+    duration: "15", 
+    kcal: "200",
+    user_id: "1"
+  )
+end
+3.times do |activity|
+  Activity.create!(
+    activity_list_id: "3",
+    date: "1/1/2018".to_date , 
+    duration: "15", 
+    kcal: "200",
+    user_id: "1"
+  )
+end
+
+2.times do |activity|
+  Activity.create!(
+    activity_list_id: "4",
     date: "1/1/2018".to_date , 
     duration: "15", 
     kcal: "200",
