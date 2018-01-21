@@ -3,7 +3,12 @@ $theme-colors: (
   "primary": #00999d,
   "secondary": #ff9800,
 );
+$pg-blue: #00999d;
 
+$navbar-dark-color:                 rgba($pg-blue, .5) !default;
+$navbar-dark-hover-color:           rgba($pg-blue, .75) !default;
+$navbar-dark-active-color:          $pg-blue !default;
+$navbar-dark-disabled-color:        rgba($pg-blue, .25) !default;
 @import "bootstrap";
 
 /*
