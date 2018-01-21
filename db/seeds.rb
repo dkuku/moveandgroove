@@ -8,8 +8,8 @@
 #
 
 user =  User.new(
-  email: "daniel@wp.pl",
-  name: "Daniel",
+  email: "admin@mg.com",
+  name: "User1",
   password: "123456",
   password_confirmation: "123456",
   admin: true
@@ -17,8 +17,8 @@ user =  User.new(
 user.save!
 
 user =  User.new(
-  email: "dan@wp.pl",
-  name: "Dan",
+  email: "user@mg.com",
+  name: "User2",
   password: "123456",
   password_confirmation: "123456",
   admin: false
@@ -128,4 +128,25 @@ end
   )
 end
 
-puts "10 activities create"
+puts "10 activities created"
+
+
+2.times do |activity|
+  Activity.create!(
+    activity_list_id: "2",
+    date: "1/1/2018".to_date , 
+    duration: "15", 
+    kcal: "200",
+    user_id: "2"
+  )
+end
+3.times do |activity|
+  Activity.create!(
+    activity_list_id: "1",
+    date: "1/2/2018".to_date , 
+    duration: "15", 
+    kcal: "200",
+    user_id: "2"
+  )
+end 
+puts "5 activities created for user 2"

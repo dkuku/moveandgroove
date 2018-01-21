@@ -1,27 +1,33 @@
-<%= bootstrap_form_for(activity) do |form| %>
-    <% if activity.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+<% if current_user %>
+    <%= bootstrap_form_for(activity) do |form| %>
+        <% if activity.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
 
-            <ul>
-                <% activity.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
+                <ul>
+                    <% activity.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <% if current_user %>
+            <%= form.select(:activity_list_id, options_from_collection_for_select(@activity_list, :id, :name), { :class => "form-control" }) %>
+            <%= form.date_select :date, id: :activity_date, class: "form-control datepicker" %>
+            <%= form.number_field :duration, id: :activity_duration, class: "form-control" %>
+            <%= form.number_field :kcal, id: :activity_kcal, class: "form-control" %>
+            <%= form.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+
+        <div class="actions">
+            <%= form.submit %>
         </div>
     <% end %>
-    <%= form.select(:activity_list_id, options_from_collection_for_select(@activity_list, :id, :name), { :class => "form-control" }) %>
-    <%= form.date_select :date, id: :activity_date, class: "form-control datepicker" %>
-    <%= form.number_field :duration, id: :activity_duration, class: "form-control" %>
-    <%= form.number_field :kcal, id: :activity_kcal, class: "form-control" %>
-    <% if current_user %>
-        <%= form.hidden_field :user_id, value: current_user.id %>
-    <% end %>
-
-    <div class="actions">
-        <%= form.submit %>
-    </div>
-<% end %>
 
 </div> 
 
+<% else %>
+    <p class="text-warning">
+        You need to be logged in to add activities
+    </p>
+<% end %>

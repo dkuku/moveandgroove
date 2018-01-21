@@ -1,26 +1,26 @@
 <% if current_user.try(:admin?) %>
 
-<%= bootstrap_form_for(activity_list) do |form| %>
-  <% if activity_list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(activity_list.errors.count, "error") %> prohibited this activity_list from being saved:</h2>
+    <%= bootstrap_form_for(activity_list) do |form| %>
+        <% if activity_list.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(activity_list.errors.count, "error") %> prohibited this activity_list from being saved:</h2>
 
-      <ul>
-      <% activity_list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+                <ul>
+                    <% activity_list.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
 
-    <%= form.text_field :name, id: :activity_list_name %>
-    <%= form.text_field :theme, id: :activity_list_theme %>
-    <%= form.text_field :main_image, id: :activity_list_main_image %>
-    <%= form.text_field :thumb_image, id: :activity_list_thumb_image %>
-    <%= form.submit %>
-<% end %>
+        <%= form.text_field :name, id: :activity_list_name %>
+        <%= form.text_field :theme, id: :activity_list_theme %>
+        <%= form.text_field :main_image, id: :activity_list_main_image %>
+        <%= form.text_field :thumb_image, id: :activity_list_thumb_image %>
+        <%= form.submit %>
+    <% end %>
 <% else %>
-You don't have administrator rights. 
-<br>
+    You don't have administrator rights. 
+    <br>
 
 <% end %>
