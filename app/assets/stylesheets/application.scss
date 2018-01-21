@@ -5,8 +5,8 @@ $theme-colors: (
 );
 $pg-blue: #00999d;
 
-$navbar-dark-color:                 rgba($pg-blue, .5) !default;
-$navbar-dark-hover-color:           rgba($pg-blue, .75) !default;
+$navbar-dark-color:                 rgba($pg-blue, .75) ;
+$navbar-dark-hover-color:           rgba($pg-blue, .95) ;
 $navbar-dark-active-color:          $pg-blue !default;
 $navbar-dark-disabled-color:        rgba($pg-blue, .25) !default;
 @import "bootstrap";
@@ -34,9 +34,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .jumbotron{
-    background-image: asset_url('front.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 65vh;
     width: 100%;
     padding-top: 6rem;
@@ -58,4 +55,10 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     line-height: 1.6;
     box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 1px 4px rgba(0,0,0,.2);
+}
+
+.nav-link {
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 5px black;
+
 }
