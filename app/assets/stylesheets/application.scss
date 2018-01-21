@@ -1,7 +1,7 @@
 /* Bootstrap overrides */
 $theme-colors: (
-  "primary": #00999d,
-  "secondary": #ff9800,
+"primary": #00999d,
+"secondary": #ff9800,
 );
 $pg-blue: #00999d;
 
@@ -16,14 +16,19 @@ $navbar-dark-disabled-color:        rgba($pg-blue, .25) !default;
  */
 
 /*
- e Globals
+e Globals
  */
+html{
+    font-family: 'Roboto', sans-serif;
+} 
 body {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
-h1 {
-  font-family: 'Mitr', sans-serif;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mitr', sans-serif;
 }
+
 .inline {
     display: inline-block;
 }
@@ -35,6 +40,11 @@ h1 {
     height: 65vh;
     width: 100%;
     padding-top: 6rem;
+}
+
+.jumbotron-text{
+    padding-top: 20vh;
+    text-shadow: 5px 5px 10px black;
 }
 
 .button{
@@ -49,4 +59,3 @@ h1 {
     line-height: 1.6;
     box-shadow: 0 1px 5px rgba(0,0,0,.2), 0 1px 4px rgba(0,0,0,.2);
 }
-
