@@ -15,6 +15,11 @@
             <li class="nav-item">
                 <%= link_to "Contact", contact_us_path, class: "nav-link" %>
             </li>
+            <% if current_user.try(:admin?) %>
+                <li>
+                    <%= link_to "Activities List", activity_lists_path, class: "nav-link" %>
+                </li>
+            <% end %>
         </ul>
         <ul class="nav navbar-nav">
             <% if current_user %>
