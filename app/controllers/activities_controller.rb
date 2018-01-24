@@ -1,11 +1,14 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
   before_action :get_activity_list
-  before_action :get_users, only: [:index]
+  before_action :get_users, only: [:index, :only_user]
   # GET /activities
   # GET /activities.json
   def index
       @activities = Activity.order("date desc")
+      if current_user
+        @activities_user = Activity.where(user_id: current_user.id).order("date desc")
+      end
     #.all
   end
 
@@ -63,7 +66,10 @@ class ActivitiesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def only_user
+        @activities_user = Activity.where(user_id: current_user.id).order("date desc")
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_activity

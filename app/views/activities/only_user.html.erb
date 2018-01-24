@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
     <h1 class="inline">Activities</h1>
-    <%if current_user %>
     <%= link_to 'New Activity', new_activity_path, class: "btn btn-success float-right" %>
-    <%= link_to "Only my activities", only_user_activities_path %>
-    <% end %>    
+    <%= link_to "All activities", activities_path %>
+
     <table class="table table-striped">
         <thead>
             <tr>
@@ -19,8 +18,8 @@
         </thead>
 
         <tbody>
-            <% activities_to_display = @activities %>
 
+            <% activities_to_display = @activities_user %>
             <% activities_to_display.each_with_index do |activity, idx| %>
                 <tr>
                     <th scope="row"><%= idx + 1 %></th>

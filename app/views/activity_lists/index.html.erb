@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
     <h1 class="inline">Activity Lists</h1>
+    <% if current_user.admin %>
         <%= link_to 'New Activity', new_activity_list_path, class: "btn btn-success float-right" %>
-
+    <% end %>
     <table class="table">
         <thead>
             <tr>
