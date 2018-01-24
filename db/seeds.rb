@@ -84,6 +84,12 @@ ActivityList.create!(
   main_image: "weight.png",
   thumb_image: "t-weight.png"
 )
+ActivityList.create!(
+  name: "treadmill",
+  theme: "default",
+  main_image: "treadmill.png",
+  thumb_image: "t-treadmill.png"
+)
 
 
 puts "10 activity_list created"
