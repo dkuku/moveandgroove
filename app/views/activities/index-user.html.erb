@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
     <h1 class="inline">Activities</h1>
-    <%= link_to 'New Activity', new_activity_path, class: "btn btn-success float-right" %>
+    <%= link_to 'New Activity', new_activity_path, class: "button float-right" %>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col">No.</th>
                 <th scope="col">Date</th>
-                <th scope="col">User</th>
                 <th scope="col">Type</th>
                 <th scope="col">Duration</th>
                 <th scope="col">Kalories</th>
@@ -21,7 +20,6 @@
                 <tr>
                     <th scope="row"><%= idx + 1 %></th>
                     <td><%= activity.date %></td>
-                    <td><%= @users.find(activity.user_id).name %></td>
                     <td><%= image_tag @activity_list.find(activity.activity_list_id).thumb_image unless @activity_list.find(activity.activity_list_id).thumb_image.nil?  %>  <%= @activity_list.find(activity.activity_list_id).name %></td>
                     <td><%= activity.duration %> min</td>
                     <td><%= activity.kcal %> kcal</td>

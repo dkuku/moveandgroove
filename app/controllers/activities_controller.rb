@@ -1,10 +1,12 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
   before_action :get_activity_list
+  before_action :get_users, only: [:index]
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+      @activities = Activity.order("date desc")
+    #.all
   end
 
   # GET /activities/1
@@ -70,6 +72,9 @@ class ActivitiesController < ApplicationController
 
     def get_activity_list
       @activity_list = ActivityList.all
+    end
+    def get_users
+      @users = User.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

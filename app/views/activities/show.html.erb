@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="card border-primary mx-auto" style="width: 400px">
-    <%= image_tag @activity_list.find(@activity.activity_list_id).main_image unless @activity_list.find(@activity.activity_list_id).main_image.nil?  %>
+    <%= image_tag @activity_list.find(@activity.activity_list_id).main_image, class: "card-img-top" unless @activity_list.find(@activity.activity_list_id).main_image.nil?  %>
     <div class="card-body bg-dark">
         <h5 class="card-title">Workout type</h5>
         <p class="card-text"><%= @activity_list.find(@activity.activity_list_id).name %></p>
@@ -18,7 +18,7 @@
         <% if current_user && current_user.id == @activity.user_id %>
             <%= link_to 'Edit', edit_activity_path(@activity), class: "btn btn-secondary" %> 
         <% end %>
+        <%= link_to 'Back', activities_path, class: "btn btn-light float-right" %>
     </div>
 </div>
 
-<%= link_to 'Back', activities_path %>
