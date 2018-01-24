@@ -11,13 +11,11 @@
                 </ul>
             </div>
         <% end %>
-        <% if current_user %>
-            <%= form.select(:activity_list_id, options_from_collection_for_select(@activity_list, :id, :name), { :class => "form-control" }) %>
-            <%= form.date_select :date, id: :activity_date, class: "form-control datepicker" %>
-            <%= form.number_field :duration, id: :activity_duration, class: "form-control" %>
-            <%= form.number_field :kcal, id: :activity_kcal, class: "form-control" %>
-            <%= form.hidden_field :user_id, value: current_user.id %>
-        <% end %>
+        <%= form.select(:activity_list_id, options_from_collection_for_select(@activity_list, :id, :name), { :class => "form-control" }) %>
+        <%= form.date_select :date, id: :activity_date, class: "form-control datepicker" %>
+        <%= form.number_field :duration, id: :activity_duration, class: "form-control" %>
+        <%= form.number_field :kcal, id: :activity_kcal, class: "form-control" %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
 
         <div class="actions">
             <%= form.submit %>

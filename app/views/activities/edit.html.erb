@@ -1,6 +1,6 @@
-<h1>Editing Activity</h1>
+<h1 class="inline">Editing Activity</h1>
+<%= link_to 'Back', activities_path, class: "btn btn-light float-right" %>
+<%= link_to 'Show', @activity, class: "btn btn-info float-right" %>
 
 <%= render 'form', activity: @activity %>
 
-<%= link_to 'Show', @activity %> |
-<%= link_to 'Back', activities_path %>
