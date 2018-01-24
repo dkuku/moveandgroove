@@ -7,10 +7,15 @@
     <div class="jumbotron-text text-secondary" style="position: relative; z-index: 100">
         <h1 class="display-4">Move & Groove</h1>
         <p class="lead">Where do you want to burn calories today ?</p>
+        <% if current_user %>
+            <p class="text-primary">Hello <%= current_user.name %>, nice to see you again</p>
+            <%= link_to 'Add New Activity', new_activity_path, class: "btn btn-primary" %>
+
+            <% else %>
         <div class="mx-auto mb-1" >
             <%= link_to "Register", new_user_registration_path, class: "btn btn-info", type: "button"  %>
             <%= link_to "Login", new_user_session_path, class: "btn btn-success", type: "button"  %>
-
+        <% end %>
         </div>
     </div>
 </div>
