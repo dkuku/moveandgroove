@@ -93,7 +93,7 @@ puts "10 activity_list created"
 2.times do |activity|
   Activity.create!(
     activity_list_id: "2",
-    date: "1/1/2018".to_date , 
+    date: "#{activity+1}/1/2018".to_date , 
     duration: "15", 
     kcal: "200",
     user_id: "1"
@@ -102,7 +102,7 @@ end
 3.times do |activity|
   Activity.create!(
     activity_list_id: "1",
-    date: "1/2/2018".to_date , 
+    date: "#{activity+3}/2/2018".to_date , 
     duration: "15", 
     kcal: "200",
     user_id: "1"
@@ -111,7 +111,7 @@ end
 3.times do |activity|
   Activity.create!(
     activity_list_id: "3",
-    date: "1/1/2018".to_date , 
+    date: "#{activity+5}/1/2018".to_date , 
     duration: "15", 
     kcal: "200",
     user_id: "1"
@@ -121,7 +121,7 @@ end
 2.times do |activity|
   Activity.create!(
     activity_list_id: "4",
-    date: "1/1/2018".to_date , 
+    date: "#{activity+8}/1/2018".to_date , 
     duration: "15", 
     kcal: "200",
     user_id: "1"
@@ -134,7 +134,7 @@ puts "10 activities created"
 2.times do |activity|
   Activity.create!(
     activity_list_id: "2",
-    date: "1/1/2018".to_date , 
+    date: "#{activity+1}/1/2018".to_date , 
     duration: "15", 
     kcal: "200",
     user_id: "2"
@@ -143,7 +143,7 @@ end
 3.times do |activity|
   Activity.create!(
     activity_list_id: "1",
-    date: "1/2/2018".to_date , 
+    date: "#{activity+3}/2/2018".to_date , 
     duration: "15", 
     kcal: "200",
     user_id: "2"
