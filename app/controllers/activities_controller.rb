@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
-  before_action :get_activity_list, only: [:index, :show]
+  before_action :get_activity_list
   before_action :get_users, only: [:index]
   # GET /activities
   # GET /activities.json
