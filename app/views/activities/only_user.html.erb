@@ -2,7 +2,7 @@
 <div class="container">
     <h1 class="inline">Activities</h1>
     <%= link_to 'New Activity', new_activity_path, class: "btn btn-success float-right" %>
-    <%= link_to "All activities", activities_path %>
+    <%= link_to "I'm social", activities_path, class: "btn btn-light float-right" %>
 
     <table class="table table-striped">
         <thead>
@@ -25,7 +25,14 @@
                     <th scope="row"><%= idx + 1 %></th>
                     <td><%= activity.date %></td>
                     <td><%= @users.find(activity.user_id).name %></td>
-                    <td><%= image_tag @activity_list.find(activity.activity_list_id).thumb_image unless @activity_list.find(activity.activity_list_id).thumb_image.nil?  %>  <%= @activity_list.find(activity.activity_list_id).name %></td>
+                    <td>
+                        <% if @activity_list.where(:id => activity.activity_list_id).blank? %>
+                            <%= "unknown activity"%>
+                        <%  else %>
+                            <%= image_tag @activity_list.find(activity.activity_list_id).thumb_image unless @activity_list.find(activity.activity_list_id).thumb_image.nil? %>
+                            <%= @activity_list.find(activity.activity_list_id).name %>
+                        <%  end %>
+                    </td>
                     <td><%= activity.duration %> min</td>
                     <td><%= activity.kcal %> kcal</td>
                     <td>

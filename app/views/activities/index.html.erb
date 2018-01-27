@@ -2,9 +2,9 @@
 <div class="container">
     <h1 class="inline">Activities</h1>
     <%if current_user %>
-    <%= link_to 'New Activity', new_activity_path, class: "btn btn-success float-right" %>
-    <%= link_to "Only my activities", only_user_activities_path %>
-    <% end %>    
+        <%= link_to 'New Activity', new_activity_path, class: "btn btn-success float-right" %>
+        <%= link_to "I'm anti social", only_user_activities_path, class: "btn btn-light float-right" %>
+    <% end %>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -25,24 +25,35 @@
                 <tr>
                     <th scope="row"><%= idx + 1 %></th>
                     <td><%= activity.date %></td>
-                    <td><%= @users.find(activity.user_id).name %></td>
-                    <td><%= image_tag @activity_list.find(activity.activity_list_id).thumb_image unless @activity_list.find(activity.activity_list_id).thumb_image.nil?  %>  <%= @activity_list.find(activity.activity_list_id).name %></td>
-                    <td><%= activity.duration %> min</td>
-                    <td><%= activity.kcal %> kcal</td>
                     <td>
-                        <div class="btn-group btn-group-sm">
-                            <%= link_to 'Show', activity, class: "btn btn-info" %>
-                            <% if current_user && current_user.id == activity.user_id %>
-                                <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
-                                <%= link_to 'Destroy', activity, class: "btn btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %>
-                            <% end %>
-                        </div>
-                    </td>
-                </tr>
-            <% end %>
-        </tbody>
-    </table>
-
-    <br>
-</div>
+                        <%= if @users.where(:id => activity.user_id).blank?
+                                "user hidden"
+                            else
+                                @users.find(activity.user_id).name
+                            end %>
+                        </td>
+                        <td>
+                            <% if @activity_list.where(:id => activity.activity_list_id).blank? %>
+                                <%= "unknown activity"%>
+                            <%  else %>
+                                <%= image_tag @activity_list.find(activity.activity_list_id).thumb_image unless @activity_list.find(activity.activity_list_id).thumb_image.nil? %>
+                                <%= @activity_list.find(activity.activity_list_id).name %>
+                            <%  end %>
+                        </td>
+                        <td><%= activity.duration %> min</td>
+                        <td><%= activity.kcal %> kcal</td>
+                        <td>
+                            <div class="btn-group btn-group-sm">
+                                <%= link_to 'Show', activity, class: "btn btn-info" %>
+                                <% if current_user && current_user.id == activity.user_id %>
+                                    <%= link_to 'Edit', edit_activity_path(activity), class: "btn btn-warning" %>
+                                    <%= link_to 'Destroy', activity, class: "btn btn-danger",  method: :delete, data: { confirm: 'Are you sure?' } %>
+                                <% end %>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
 
